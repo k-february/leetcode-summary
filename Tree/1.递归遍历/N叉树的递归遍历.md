@@ -16,9 +16,7 @@ for (auto& c : root->children) {
 #### 前序遍历
 Given the  `root`  of an n-ary tree, return  _the preorder traversal of its nodes' values_.
 
-Nary-Tree input serialization is represented in their level order traversal. 
-
-Each group of children is separated by the null value (See examples)
+Nary-Tree input serialization is represented in their level order traversal. Each group of children is separated by the null value (See examples)
 
 **Example 1:**
 >**Input:** `root = [1,null,3,2,4,null,5,6]`
@@ -72,9 +70,7 @@ public:
 #### 后序遍历
 Given the  `root`  of an n-ary tree, return  _the postorder traversal of its nodes' values_.
 
-Nary-Tree input serialization is represented in their level order traversal. 
-
-Each group of children is separated by the null value (See examples)
+Nary-Tree input serialization is represented in their level order traversal. Each group of children is separated by the null value (See examples)
 
 **Example 1:**
 >**Input:** root = [1,null,3,2,4,null,5,6]
