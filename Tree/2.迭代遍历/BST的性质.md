@@ -29,16 +29,10 @@ public:
 
 
 相关题型:
-- **[`98. Validate Binary Search Tree`](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/)**
-- **[`99. Recover Binary Search Tree`](https://leetcode.cn/problems/binary-tree-preorder-traversal/description/)**
-- **[`230. Kth Smallest Element in a BST`](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/)**
-- **[`230. Kth Smallest Element in a BST`](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/)**
-- **[`230. Kth Smallest Element in a BST`](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/)**
-- **[`230. Kth Smallest Element in a BST`](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/)**
-- **[`230. Kth Smallest Element in a BST`](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/)**
+#### **[`98. Validate Binary Search Tree`](https://leetcode.cn/problems/binary-tree-inorder-traversal/description/)**
 
-####
-####
-####
+#### **[`99. Recover Binary Search Tree`](https://leetcode.cn/problems/binary-tree-preorder-traversal/description/)**
+
+#### **[`230. Kth Smallest Element in a BST`](https://leetcode.cn/problems/binary-tree-postorder-traversal/description/)**
 ####
 ####
