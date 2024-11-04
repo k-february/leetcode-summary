@@ -1,12 +1,4 @@
 ### N叉树的前后序递归遍历
-```cpp
-// N叉树递归遍历模版
-// 前序遍历在这里处理root
-for (auto& c : root->children) {
-    dfs(c, ...)
-}
-// 后序遍历在这里处理root
-```
 
 相关题型:
 -   前序遍历:**[`589. N-ary Tree Preorder Traversal`](https://leetcode.cn/problems/n-ary-tree-preorder-traversal/description/)**
@@ -44,23 +36,26 @@ Nary-Tree input serialization is represented in their level order traversal. Eac
 
 ```cpp
 // 前序遍历
+// 先处理root, 然后将root的所有child逆序进栈, 保证最前面的c最后进栈
+// 配合栈的性质, 可以保证的是c可以在root之后最先被处理
 class Solution {
 public:
-    void dfs(TreeNode* root, vector<int>& ans) {
-        if (!root) {
-            return;
-        }
-        ans.emplace_back(root->val);
-        for (auto& p : root->children) {
-            dfs(p, ans);
-        }
-        return;
-    }
-
     vector<int> preorder(TreeNode* root) {
         vector<int> ans;
-        dfs(root, ans);
-        return ans;    
+        stack<Node*> st;
+        if (!root) {
+            return ans;
+        }
+        st.push(root);
+        while (!st.empty()) {
+            Node* p = st.top();
+            st.pop();
+            ans.emplace_back(p->val);
+            for (int i = p->children.size() - 1; i >= 0; i--) {
+                st.push(p->children[i]);
+            }
+        }
+        return ans;   
     }
 };
 ```
@@ -97,22 +92,25 @@ Nary-Tree input serialization is represented in their level order traversal. Eac
 **Follow up:**  Recursive solution is trivial, could you do it iteratively?
 ```cpp
 // 后序遍历
+// 思路同前序遍历, 最后reverse
 class Solution {
 public:
-    void dfs(Node* root, vector<int>& ans) {
-        if (!root) {
-            return;
-        }
-        for (auto& p : root->children) {
-            dfs(p, ans);
-        }
-        ans.emplace_back(root->val);
-        return;
-    }
-
     vector<int> postorder(Node* root) {
         vector<int> ans;
-        dfs(root, ans);
+        stack<Node*> st;
+        if (!root) {
+            return ans;
+        }
+        st.push(root);
+        while (!st.empty()) {
+            Node* p = st.top();
+            st.pop();
+            ans.emplace_back(p->val);
+            for (auto& r : p->children) {
+                st.push(r);
+            }
+        }
+        std::reverse(ans.begin(), ans.end());
         return ans;
     }
 };
